@@ -1,0 +1,6 @@
+{
+  "name": "BJA Medical Solutions",
+  "description": "Entlastung, wo Medizin Zeit braucht. Professionelle externe Dokumentationsassistenz und administrative Entlastung im Gesundheitswesen.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
