@@ -10,13 +10,13 @@ interface UberMichViewProps {
 
 export const UberMichView: React.FC<UberMichViewProps> = ({ onNavigate }) => {
   return (
-    <div className="flex flex-col flex-1 w-full text-[#1d1d1f] gap-8 pb-16">
+    <div className="flex flex-col flex-1 w-full text-[#1d1d1f] gap-4 sm:gap-8 pb-8 sm:pb-16">
       {/* Header Hero */}
       <motion.div 
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="bg-white rounded-3xl border border-gray-200/70 p-8 sm:p-12 shadow-xl shadow-black/[0.02]"
+        className="bg-white rounded-3xl border border-gray-200/70 p-6 sm:p-12 shadow-xl shadow-black/[0.02]"
       >
         <span className="text-xs uppercase tracking-[0.22em] font-bold text-[#002B5B] block mb-3">
           Hintergrund & Qualifikation
@@ -29,13 +29,13 @@ export const UberMichView: React.FC<UberMichViewProps> = ({ onNavigate }) => {
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-8 items-start">
         {/* Founder Bio Column */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="lg:col-span-7 bg-white rounded-3xl border border-gray-200/70 p-8 sm:p-12 shadow-lg shadow-black/[0.02]"
+          className="lg:col-span-7 bg-white rounded-3xl border border-gray-200/70 p-6 sm:p-12 shadow-lg shadow-black/[0.02]"
         >
           <span className="inline-block bg-blue-50 text-[#002B5B] border border-blue-100 text-xs font-semibold tracking-wide px-3.5 py-1.5 rounded-full mb-6">
             Die Person hinter BJA
@@ -59,7 +59,7 @@ export const UberMichView: React.FC<UberMichViewProps> = ({ onNavigate }) => {
             </p>
           </div>
 
-          <div className="mt-8">
+          <div className="mt-8 hidden sm:block">
             <ImagePlaceholder 
               title="Bianca-Julia Ahsmann bei der Dokumentationsanalyse im KIS-System"
               subtitle="Gründerin Portrait"
@@ -104,10 +104,10 @@ export const UberMichView: React.FC<UberMichViewProps> = ({ onNavigate }) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="lg:col-span-5 flex flex-col gap-8"
+          className="lg:col-span-5 flex flex-col gap-4 sm:gap-8"
         >
           {/* Qualification Cards Bento */}
-          <div className="bg-[#002B5B] text-white rounded-3xl p-8 sm:p-10 shadow-xl shadow-blue-950/10 relative overflow-hidden">
+          <div className="bg-[#002B5B] text-white rounded-3xl p-6 sm:p-10 shadow-xl shadow-blue-950/10 relative overflow-hidden">
             <div className="absolute -top-20 -right-20 w-60 h-60 bg-blue-400/10 rounded-full blur-3xl pointer-events-none" />
             
             <span className="text-[11px] uppercase tracking-[0.2em] font-bold text-blue-300 block mb-4">
@@ -157,7 +157,7 @@ export const UberMichView: React.FC<UberMichViewProps> = ({ onNavigate }) => {
           </div>
 
           {/* Philosophy Callout Bento */}
-          <div className="bg-white rounded-3xl p-8 border border-gray-200/70 shadow-lg shadow-black/[0.02]">
+          <div className="bg-white rounded-3xl p-6 sm:p-8 border border-gray-200/70 shadow-lg shadow-black/[0.02]">
             <div className="w-12 h-12 rounded-2xl bg-blue-50 text-[#002B5B] flex items-center justify-center mb-6">
               <Award className="w-6 h-6" />
             </div>
@@ -169,9 +169,9 @@ export const UberMichView: React.FC<UberMichViewProps> = ({ onNavigate }) => {
             </p>
             <button
               onClick={() => onNavigate('kontakt')}
-              className="w-full bg-[#1d1d1f] text-white py-4 rounded-full text-xs font-semibold hover:bg-[#002B5B] transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer shadow-sm"
+              className="w-full bg-[#1d1d1f] text-white py-4 rounded-full text-sm font-semibold hover:bg-[#002B5B] transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer shadow-sm group"
             >
-              Persönlich kennenlernen <ArrowRight className="w-4 h-4" />
+              Lassen Sie uns zusammenarbeiten <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
         </motion.div>

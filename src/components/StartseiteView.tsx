@@ -10,15 +10,15 @@ interface StartseiteViewProps {
 
 export const StartseiteView: React.FC<StartseiteViewProps> = ({ onNavigate }) => {
   return (
-    <div className="flex flex-col flex-1 w-full text-[#1d1d1f] gap-6 sm:gap-8 pb-12 sm:pb-16">
+    <div className="flex flex-col flex-1 w-full text-[#1d1d1f] gap-4 sm:gap-8 pb-8 sm:pb-16">
       {/* Apple-style Bento Hero Section */}
-      <section className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 pt-2 sm:pt-4">
+      <section className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6 pt-0 sm:pt-4">
         {/* Main Hero Card */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="lg:col-span-8 bg-white rounded-3xl p-6 sm:p-10 md:p-14 border border-gray-200/70 shadow-xl shadow-black/[0.02] flex flex-col justify-between relative overflow-hidden"
+          className="lg:col-span-8 bg-white rounded-3xl p-5 sm:p-10 md:p-14 border border-gray-200/70 shadow-xl shadow-black/[0.02] flex flex-col justify-between relative overflow-hidden"
         >
           <div className="absolute top-0 right-0 w-80 sm:w-96 h-80 sm:h-96 bg-gradient-to-bl from-blue-500/10 via-indigo-500/5 to-transparent rounded-full blur-3xl pointer-events-none -mr-20 -mt-20" />
           
@@ -39,16 +39,16 @@ export const StartseiteView: React.FC<StartseiteViewProps> = ({ onNavigate }) =>
           <div className="relative z-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-2">
             <button 
               onClick={() => onNavigate('kontakt')}
-              className="bg-[#002B5B] text-white px-7 py-3.5 rounded-full font-semibold text-sm hover:bg-[#003d82] hover:shadow-lg hover:shadow-blue-900/20 transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer text-center"
+              className="bg-[#002B5B] text-white px-7 py-3.5 rounded-full font-semibold text-sm hover:bg-[#003d82] hover:shadow-lg hover:shadow-blue-900/20 transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer text-center group"
             >
-              Beratung anfordern
-              <ArrowRight className="w-4 h-4" />
+              Unverbindliches Erstgespräch
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
             <button 
               onClick={() => onNavigate('leistungen')}
               className="bg-gray-100 text-[#1d1d1f] px-7 py-3.5 rounded-full font-semibold text-sm hover:bg-gray-200/80 transition-all duration-300 cursor-pointer text-center"
             >
-              Leistungen ansehen
+              Lösungen entdecken
             </button>
           </div>
 
@@ -70,7 +70,7 @@ export const StartseiteView: React.FC<StartseiteViewProps> = ({ onNavigate }) =>
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-          className="lg:col-span-4 rounded-3xl overflow-hidden shadow-xl shadow-black/[0.04] relative min-h-[260px] sm:min-h-[340px] lg:min-h-full flex items-center justify-center group bg-gray-100 border border-gray-200/70"
+          className="hidden sm:flex lg:col-span-4 rounded-3xl overflow-hidden shadow-xl shadow-black/[0.04] relative min-h-[260px] sm:min-h-[340px] lg:min-h-full items-center justify-center group bg-gray-100 border border-gray-200/70"
         >
           <img 
             src="https://s1.directupload.eu/images/260624/j888vweh.webp" 
@@ -82,7 +82,7 @@ export const StartseiteView: React.FC<StartseiteViewProps> = ({ onNavigate }) =>
       </section>
 
       {/* Visual Workflow Impressions (Requested Image Placeholders) */}
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+      <section className="hidden sm:grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -127,7 +127,7 @@ export const StartseiteView: React.FC<StartseiteViewProps> = ({ onNavigate }) =>
           <p className="text-2xl sm:text-3xl font-extrabold text-[#1d1d1f] tracking-tight">Spezialisierte Expertise für höchste Ansprüche.</p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
           {CORE_PILLARS.map((pillar, idx) => (
             <motion.div
               key={idx}
@@ -135,7 +135,7 @@ export const StartseiteView: React.FC<StartseiteViewProps> = ({ onNavigate }) =>
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.12 }}
-              className="bg-white rounded-3xl p-6 sm:p-8 border border-gray-200/70 shadow-lg shadow-black/[0.02] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
+              className="bg-white rounded-3xl p-5 sm:p-8 border border-gray-200/70 shadow-lg shadow-black/[0.02] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
             >
               <div>
                 <div className="w-12 h-12 rounded-2xl bg-blue-50 text-[#002B5B] flex items-center justify-center mb-6">
@@ -164,6 +164,31 @@ export const StartseiteView: React.FC<StartseiteViewProps> = ({ onNavigate }) =>
           ))}
         </div>
       </section>
+
+      {/* Psychological Pain-Point CTA */}
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="mt-6 sm:mt-10 bg-blue-50/50 rounded-3xl p-6 sm:p-10 border border-blue-100 flex flex-col md:flex-row items-center justify-between gap-6"
+      >
+        <div className="max-w-2xl">
+          <h2 className="text-xl sm:text-2xl font-bold text-[#1d1d1f] tracking-tight mb-2">
+            Dokumentation stiehlt Ihre wertvollste Ressource: Zeit.
+          </h2>
+          <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+            Befreien Sie sich und Ihr Team von administrativen Überstunden. Lassen Sie uns gemeinsam evaluieren, wie viel Zeit Sie durch externe Assistenz direkt am Patienten zurückgewinnen können.
+          </p>
+        </div>
+        <button 
+          onClick={() => onNavigate('kontakt')}
+          className="w-full md:w-auto bg-[#002B5B] text-white px-8 py-4 rounded-full font-semibold text-sm hover:bg-[#003d82] hover:shadow-lg hover:shadow-blue-900/20 transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer shrink-0 group"
+        >
+          Kostenloses Erstgespräch vereinbaren
+          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+        </button>
+      </motion.section>
 
       {/* Apple-like Vision Section Banner */}
       <motion.section 

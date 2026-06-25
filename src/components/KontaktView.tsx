@@ -28,13 +28,13 @@ export const KontaktView: React.FC<KontaktViewProps> = ({ initialSubject = '' })
   };
 
   return (
-    <div className="flex flex-col flex-1 w-full text-[#1d1d1f] gap-8 pb-16">
+    <div className="flex flex-col flex-1 w-full text-[#1d1d1f] gap-4 sm:gap-8 pb-8 sm:pb-16">
       {/* Hero Banner */}
       <motion.div 
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="bg-white rounded-3xl border border-gray-200/70 p-8 sm:p-12 shadow-xl shadow-black/[0.02]"
+        className="bg-white rounded-3xl border border-gray-200/70 p-6 sm:p-12 shadow-xl shadow-black/[0.02]"
       >
         <span className="text-xs uppercase tracking-[0.22em] font-bold text-[#002B5B] block mb-3">
           Unverbindliche Anfrage
@@ -47,13 +47,13 @@ export const KontaktView: React.FC<KontaktViewProps> = ({ initialSubject = '' })
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-8 items-start">
         {/* Contact Info Column */}
         <motion.div 
           initial={{ opacity: 0, x: -15 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
-          className="lg:col-span-5 bg-white rounded-3xl border border-gray-200/70 p-8 sm:p-10 shadow-lg shadow-black/[0.02] flex flex-col justify-between"
+          className="lg:col-span-5 bg-white rounded-3xl border border-gray-200/70 p-6 sm:p-10 shadow-lg shadow-black/[0.02] flex flex-col justify-between"
         >
           <div>
             <span className="inline-block bg-blue-50 text-[#002B5B] border border-blue-100 text-xs font-semibold tracking-wide px-3.5 py-1.5 rounded-full mb-6">
@@ -122,7 +122,7 @@ export const KontaktView: React.FC<KontaktViewProps> = ({ initialSubject = '' })
           initial={{ opacity: 0, x: 15 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
-          className="lg:col-span-7 bg-white rounded-3xl border border-gray-200/70 p-8 sm:p-12 shadow-xl shadow-black/[0.02]"
+          className="lg:col-span-7 bg-white rounded-3xl border border-gray-200/70 p-6 sm:p-12 shadow-xl shadow-black/[0.02]"
         >
           {submitted ? (
             <motion.div 

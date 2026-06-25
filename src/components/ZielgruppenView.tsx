@@ -19,13 +19,13 @@ export const ZielgruppenView: React.FC<ZielgruppenViewProps> = ({ onNavigate, on
   };
 
   return (
-    <div className="flex flex-col flex-1 w-full text-[#1d1d1f] gap-8 pb-16">
+    <div className="flex flex-col flex-1 w-full text-[#1d1d1f] gap-4 sm:gap-8 pb-8 sm:pb-16">
       {/* Hero Banner */}
       <motion.div 
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="bg-white rounded-3xl border border-gray-200/70 p-8 sm:p-12 shadow-xl shadow-black/[0.02]"
+        className="bg-white rounded-3xl border border-gray-200/70 p-6 sm:p-12 shadow-xl shadow-black/[0.02]"
       >
         <span className="text-xs uppercase tracking-[0.22em] font-bold text-[#002B5B] block mb-3">
           Einsatzgebiete & Einrichtungen
@@ -43,7 +43,7 @@ export const ZielgruppenView: React.FC<ZielgruppenViewProps> = ({ onNavigate, on
         initial={{ opacity: 0, scale: 0.98 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6 }}
-        className="bg-[#002B5B] text-white rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden"
+        className="bg-[#002B5B] text-white rounded-3xl p-6 sm:p-12 shadow-2xl relative overflow-hidden"
       >
         <div className="absolute top-0 right-0 w-80 h-80 bg-blue-400/10 rounded-full blur-3xl pointer-events-none" />
         
@@ -71,7 +71,7 @@ export const ZielgruppenView: React.FC<ZielgruppenViewProps> = ({ onNavigate, on
       </motion.div>
 
       {/* Target Groups Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {TARGET_GROUPS.map((group, gIdx) => (
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -79,7 +79,7 @@ export const ZielgruppenView: React.FC<ZielgruppenViewProps> = ({ onNavigate, on
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: gIdx * 0.1 }}
             key={group.id}
-            className={`rounded-3xl p-8 border flex flex-col justify-between transition-all duration-300 group shadow-lg shadow-black/[0.02] relative overflow-hidden ${
+            className={`rounded-3xl p-6 sm:p-8 border flex flex-col justify-between transition-all duration-300 group shadow-lg shadow-black/[0.02] relative overflow-hidden ${
               group.isFocus 
                 ? 'bg-white border-blue-200 ring-2 ring-blue-500/10' 
                 : 'bg-white border-gray-200/70 hover:border-gray-300'
@@ -134,6 +134,7 @@ export const ZielgruppenView: React.FC<ZielgruppenViewProps> = ({ onNavigate, on
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
+        className="hidden sm:block"
       >
         <ImagePlaceholder 
           title="Nahtlose Einbindung in Stationsabläufe psychiatrischer und somatischer Akutkliniken"
@@ -145,13 +146,13 @@ export const ZielgruppenView: React.FC<ZielgruppenViewProps> = ({ onNavigate, on
       </motion.div>
 
       {/* Remote vs Vor Ort Section Bento */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 pt-2 sm:pt-6">
         <motion.div 
           initial={{ opacity: 0, x: -15 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="bg-white rounded-3xl p-8 sm:p-10 border border-gray-200/70 shadow-lg shadow-black/[0.02]"
+          className="bg-white rounded-3xl p-6 sm:p-10 border border-gray-200/70 shadow-lg shadow-black/[0.02]"
         >
           <span className="text-xs uppercase tracking-widest font-bold text-[#002B5B] block mb-2">
             Zusammenarbeit Modell 1
@@ -174,7 +175,7 @@ export const ZielgruppenView: React.FC<ZielgruppenViewProps> = ({ onNavigate, on
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="bg-white rounded-3xl p-8 sm:p-10 border border-gray-200/70 shadow-lg shadow-black/[0.02]"
+          className="bg-white rounded-3xl p-6 sm:p-10 border border-gray-200/70 shadow-lg shadow-black/[0.02]"
         >
           <span className="text-xs uppercase tracking-widest font-bold text-[#002B5B] block mb-2">
             Zusammenarbeit Modell 2
@@ -192,6 +193,26 @@ export const ZielgruppenView: React.FC<ZielgruppenViewProps> = ({ onNavigate, on
           </ul>
         </motion.div>
       </div>
+
+      {/* Conversion CTA */}
+      <motion.div
+        initial={{ opacity: 0, y: 15 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="bg-blue-50/50 rounded-3xl border border-blue-100/50 p-6 sm:p-10 shadow-lg shadow-black/[0.02] flex flex-col sm:flex-row items-center justify-between gap-6"
+      >
+        <div>
+          <h3 className="text-xl sm:text-2xl font-bold tracking-tight mb-2">Finden Sie sich hier nicht wieder?</h3>
+          <p className="text-sm text-gray-600 max-w-xl leading-relaxed">Jede Einrichtung ist einzigartig. Lassen Sie uns in einem kurzen Gespräch prüfen, ob mein Service auch für Ihre spezifischen Anforderungen skalierbar ist.</p>
+        </div>
+        <button
+          onClick={() => onNavigate('kontakt')}
+          className="w-full sm:w-auto bg-[#002B5B] text-white px-8 py-4 rounded-full font-semibold text-sm hover:bg-[#003d82] transition-colors cursor-pointer shrink-0 flex items-center justify-center gap-2 group"
+        >
+          Kontakt aufnehmen <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+        </button>
+      </motion.div>
     </div>
   );
 };
